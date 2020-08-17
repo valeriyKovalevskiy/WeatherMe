@@ -1,0 +1,9 @@
+WeatherMe.xcodeproj/xcuserdata
+WeatherMe.xcworkspace/xcshareddata
+WeatherMe.xcworkspace/xcuserdata
+*.ipa
+*.zip
+*.xcarchive
+*.xcworkspace
+Pods
+Podfile.lock
