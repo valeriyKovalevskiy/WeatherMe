@@ -13,7 +13,7 @@ class SearchViewControllerViewModel {
     fileprivate let provider = WeatherDataProvider()
         
     func getDocuments(for city: String, completion: @escaping (City) -> Void) {
-        provider.loadCurrentWeatherData(for: city) { (result, error) in
+        provider.loadCurrentWeatherData(for: city) { (result) in
             
             completion(result)
             
