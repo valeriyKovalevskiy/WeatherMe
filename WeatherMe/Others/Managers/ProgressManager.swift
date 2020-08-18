@@ -20,7 +20,7 @@ class ProgressManager {
         SVProgressHUD.dismiss(completion: completion)
     }
     
-    func dismissWithError(_ error: AlamofireError) {
+    func dismissWithError(_ error: Error) {
         SVProgressHUD.showError(withStatus: error.localizedDescription)
     }
 }

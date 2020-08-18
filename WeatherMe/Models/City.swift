@@ -8,51 +8,42 @@
 
 import Foundation
 
-//TODO: - Learn more about coding keys?
-
-//MARK: - Current weather codable model
 struct City: Codable {
-    var name: String
-    var id: Int
-    var coord: Coord
-    var main: Main
-    var wind: Wind
-    var weather: [Weather]
-    var clouds: Clouds
-    var sys: Sys
-}
-
-struct Coord: Codable {
-    var lat: Double
-    var lon: Double
-}
-
-struct Main: Codable {
-    var temp: Double
-    var temp_max: Double
-    var temp_min: Double
-    var feels_like: Double
-    var humidity: Double
-    var pressure: Double
-}
-
-struct Wind: Codable {
-    var deg: Double
-    var speed: Double
-}
-
-struct Weather: Codable {
-    var description: String
-    var id: Int
-}
-
-struct Clouds: Codable {
-    var all: Int
-}
-
-struct Sys: Codable {
-    var country: String
-    var sunset: Double
-    var sunrise: Double
+    let coordinates: Coord
+    let weather: [Weather]
+    let mainParameters: Main
+    let wind: Wind
+    let clouds: Clouds
+    let timeOfDataCalculation: Double
+    let sys: Sys
+    let timezone: Double
+    let id: Int
+    let name: String
     
+    fileprivate enum CityCodingKeys: String, CodingKey {
+        case coordinates = "coord"
+        case weather = "weather"
+        case mainParameters = "main"
+        case wind = "wind"
+        case clouds = "clouds"
+        case timeOfDataCalculation = "dt"
+        case sys = "sys"
+        case timezone = "timezone"
+        case id = "id"
+        case name = "name"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CityCodingKeys.self)
+        coordinates = try values.decode(Coord.self, forKey: .coordinates)
+        weather = try values.decode([Weather].self, forKey: .weather)
+        mainParameters = try values.decode(Main.self, forKey: .mainParameters)
+        wind = try values.decode(Wind.self, forKey: .wind)
+        clouds = try values.decode(Clouds.self, forKey: .clouds)
+        timeOfDataCalculation = try values.decode(Double.self, forKey: .timeOfDataCalculation)
+        sys = try values.decode(Sys.self, forKey: .sys)
+        timezone = try values.decode(Double.self, forKey: .timezone)
+        id = try values.decode(Int.self, forKey: .id)
+        name = try values.decode(String.self, forKey: .name)
+    }
 }

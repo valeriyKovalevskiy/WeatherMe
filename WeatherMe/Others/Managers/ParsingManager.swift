@@ -21,7 +21,8 @@ class ParsingManager {
         }
             
         catch let error {
-            print(error.localizedDescription)
+
+            ProgressManager.shared.dismissWithError(error)
         }
     }
     

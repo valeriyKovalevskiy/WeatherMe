@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         temperatureLabel.frame = CGRect(x: view.center.x - view.width / 6,
                                         y: view.top + 200,
-                                        width: view.width / 3,
+                                        width: view.width / 2,
                                         height: 50)
         descriptionLabel.frame = CGRect(x: view.center.x - view.width / 4,
                                         y: temperatureLabel.bottom + 20,
@@ -72,7 +72,7 @@ class DetailViewController: UIViewController {
         view.addSubview(temperatureLabel)
 
         if let model = model {
-            temperatureLabel.text = "\(model.main.temp - 273.15)"
+            temperatureLabel.text = "\((model.mainParameters.temperature) - 273.15)"
         }
     }
     
@@ -80,7 +80,7 @@ class DetailViewController: UIViewController {
         view.addSubview(descriptionLabel)
 
         if let model = model {
-            descriptionLabel.text = model.weather.first?.description
+            descriptionLabel.text =  "\(model.weather.first?.weatherCondition ?? "")"
         }
     }
     
