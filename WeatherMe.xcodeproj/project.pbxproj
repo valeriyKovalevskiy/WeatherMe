@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2644BC9924EB9FFD008048CF /* ParsingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644BC9824EB9FFD008048CF /* ParsingManager.swift */; };
+		2644BC9C24EBBF84008048CF /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644BC9B24EBBF84008048CF /* ProgressManager.swift */; };
 		2648B45B24EA46D300CDE1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648B45A24EA46D300CDE1F0 /* AppDelegate.swift */; };
 		2648B45F24EA46D300CDE1F0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648B45E24EA46D300CDE1F0 /* SearchViewController.swift */; };
 		2648B46524EA46D300CDE1F0 /* WeatherMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2648B46324EA46D300CDE1F0 /* WeatherMe.xcdatamodeld */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2644BC9824EB9FFD008048CF /* ParsingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingManager.swift; sourceTree = "<group>"; };
+		2644BC9B24EBBF84008048CF /* ProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
 		2648B45724EA46D300CDE1F0 /* WeatherMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2648B45A24EA46D300CDE1F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2648B45E24EA46D300CDE1F0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2644BC9A24EBBD4A008048CF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2644BC9824EB9FFD008048CF /* ParsingManager.swift */,
+				2644BC9B24EBBF84008048CF /* ProgressManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		2648B44E24EA46D300CDE1F0 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +134,7 @@
 				2648B46B24EA46D300CDE1F0 /* Info.plist */,
 				2648B48224EA8B9400CDE1F0 /* CoreData */,
 				2648B48124EA8B8700CDE1F0 /* Extensions */,
+				2644BC9A24EBBD4A008048CF /* Managers */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -348,8 +362,10 @@
 			files = (
 				2648B47724EA544C00CDE1F0 /* SecondViewController.swift in Sources */,
 				2648B49F24EABECA00CDE1F0 /* SearchViewControllerViewModel.swift in Sources */,
+				2644BC9C24EBBF84008048CF /* ProgressManager.swift in Sources */,
 				2648B47424EA4CCA00CDE1F0 /* RootViewController.swift in Sources */,
 				2648B49D24EABC1D00CDE1F0 /* City.swift in Sources */,
+				2644BC9924EB9FFD008048CF /* ParsingManager.swift in Sources */,
 				2648B46524EA46D300CDE1F0 /* WeatherMe.xcdatamodeld in Sources */,
 				2648B47924EA545800CDE1F0 /* ThirdViewController.swift in Sources */,
 				2648B45F24EA46D300CDE1F0 /* SearchViewController.swift in Sources */,

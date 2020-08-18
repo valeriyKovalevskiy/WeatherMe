@@ -17,9 +17,7 @@ class RootViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .gray
-        
+                
         addChild(currentViewController)
         currentViewController.view.frame = view.bounds
         view.addSubview(currentViewController.view)
@@ -28,20 +26,20 @@ class RootViewController: UIViewController {
 
     
     //MARK: - Internal Methods
-    func showOnboarding() {
+    func showFirstScreen() {
         let controller = UINavigationController(rootViewController: SearchViewController())
         animateFadeTransition(to: controller)
     }
     
-    func showLoginScreen() {
-        let controller = UINavigationController(rootViewController: SecondViewController())
-        animateFadeTransition(to: controller)
-    }
-    
-    func showMainScreen() {
-        let controller = UINavigationController(rootViewController: ThirdViewController())
-        animateFadeTransition(to: controller)
-    }
+//    func showLoginScreen() {
+//        let controller = UINavigationController(rootViewController: SecondViewController())
+//        animateFadeTransition(to: controller)
+//    }
+//
+//    func showMainScreen() {
+//        let controller = UINavigationController(rootViewController: ThirdViewController())
+//        animateFadeTransition(to: controller)
+//    }
     
     //MARK: - Private Methods
     private func animateFadeTransition(to newViewController: UIViewController, completion: (() -> Void)? = nil) {

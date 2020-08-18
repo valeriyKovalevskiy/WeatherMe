@@ -18,11 +18,11 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            AppDelegate.shared.rootViewController.showOnboarding()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            AppDelegate.shared.rootViewController.showFirstScreen()
         }
     }
 

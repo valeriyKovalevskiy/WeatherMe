@@ -8,6 +8,8 @@
 
 import Foundation
 
+//TODO: - Learn more about coding keys?
+
 //MARK: - Current weather codable model
 struct City: Codable {
     var name: String

@@ -6,62 +6,57 @@
 //  Copyright © 2020 Valeriy Kovalevskiy. All rights reserved.
 //
 
+//TODO: - Should we remove navigation methods from controller class? ( View, according MVVM pattern )
+//TODO: - Create manager for progress hud
+
 import UIKit
 
 final class SearchViewController: UIViewController {
     //MARK: - Layout
     fileprivate let searchButton: UIButton = {
         let button = UIButton()
-        
         button.backgroundColor = .systemBackground
         button.setTitleColor(.brown, for: .normal)
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
         button.setTitle("Send request", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 25, weight: .semibold)
+        
         return button
     }()
 
     fileprivate let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         let searchTextField = searchBar.searchTextField
-
+        let image: UIImage = UIImage(systemName: "magnifyingglass")!
         searchBar.layer.masksToBounds = true
         searchBar.layer.borderWidth = 2.0
         searchBar.layer.borderColor = UIColor.brown.cgColor
         searchBar.layer.cornerRadius = 12
-        DispatchQueue.main.async {
-            let image: UIImage = UIImage(systemName: "magnifyingglass")!
-            let imageView: UIImageView = UIImageView.init(image: image)
-            
-            imageView.tintColor = .brown
-            searchTextField.leftView = nil
-            searchTextField.rightView = imageView
-            searchTextField.rightViewMode = .unlessEditing
-            searchBar.changePlaceholderColor(.brown)
-        }
-        
-        searchTextField.placeholder = "Search ..."
+        searchTextField.placeholder = "Search"
         searchTextField.textColor = UIColor.brown
         searchTextField.textAlignment = .left
-        searchTextField.font = .systemFont(ofSize: 15, weight: .semibold)
+        searchTextField.font = .systemFont(ofSize: 15, weight: .medium)
+        DispatchQueue.main.async {
+            searchBar.changePlaceholderColor(.brown)
+            searchBar.setupRightView(with: image)
+        }
         
         return searchBar
     }()
-
+    
+    //MARK: - Constants
     fileprivate let viewModel = SearchViewControllerViewModel()
+    fileprivate let progress = ProgressManager.shared
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Search city"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        view.addSubview(searchBar)
-        view.addSubview(searchButton)
-
-        searchButton.addTarget(self, action: #selector(didTappedSearchButton), for: .touchUpInside)
-
+        view.backgroundColor = .white
+        setupTitle()
+        setupSearchBar()
+        setupSearchButton()
     }
     
     override func viewWillLayoutSubviews() {
@@ -76,23 +71,42 @@ final class SearchViewController: UIViewController {
                                     height: 44)
         
     }
-
-    @objc private func didTappedSearchButton() {
-        guard let text = searchBar.text, !text.isEmpty else { return }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
+        searchBar.textField?.text = ""
+    }
+
+    //MARK: - Actions
+    @objc fileprivate func didTappedSearchButton() {
+        guard let text = searchBar.text, !text.isEmpty else { return } //custom error alerts?
+        progress.showLoader()
+
         viewModel.getDocuments(for: text) { [weak self] (result) in
             guard let strongSelf = self else { return }
-            
             let controller = DetailViewController()
             controller.model = result
+            
+            strongSelf.progress.dismissLoader()
             strongSelf.navigationController?.pushViewController(controller, animated: true)
         }
     }
     
+    //MARK: - Fileprivate methods
+    fileprivate func setupTitle() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Search city"
+    }
     
+    fileprivate func setupSearchButton() {
+        view.addSubview(searchButton)
+        searchButton.addTarget(self, action: #selector(didTappedSearchButton), for: .touchUpInside)
+    }
     
-    
-    
+    fileprivate func setupSearchBar() {
+        view.addSubview(searchBar)
+    }
     
     
 }

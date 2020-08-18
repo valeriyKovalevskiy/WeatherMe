@@ -11,15 +11,15 @@ import Foundation
 class SearchViewControllerViewModel {
     
     fileprivate let provider = WeatherDataProvider()
-        
+    
+    //MARK: - Open methods
     func getDocuments(for city: String, completion: @escaping (City) -> Void) {
         provider.loadCurrentWeatherData(for: city) { (result) in
-            
             completion(result)
-            
         }
     }
     
-    }
+}
 
+    
 

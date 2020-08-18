@@ -20,6 +20,15 @@ extension UISearchBar {
         return textField
     }
     
+    func setupRightView(with image: UIImage) {
+        let imageView: UIImageView = UIImageView.init(image: image)
+        let searchTextField = self.searchTextField
+        imageView.tintColor = .brown
+        searchTextField.leftView = nil
+        searchTextField.rightView = imageView
+        searchTextField.rightViewMode = .unlessEditing
+    }
+    
     func changePlaceholderColor(_ color: UIColor) {
         guard let UISearchBarTextFieldLabel: AnyClass = NSClassFromString("UISearchBarTextFieldLabel"),
             let field = textField else { return }

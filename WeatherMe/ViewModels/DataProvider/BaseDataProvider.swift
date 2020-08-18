@@ -16,6 +16,7 @@ protocol DataProviderDelegate: class {
 
 class BaseDataProvider {
     
+    internal var progress = ProgressManager.shared
     internal var isCancelled = false
     
     weak var delegate: DataProviderDelegate?
