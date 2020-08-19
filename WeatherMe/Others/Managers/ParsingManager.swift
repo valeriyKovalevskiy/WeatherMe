@@ -19,9 +19,7 @@ class ParsingManager {
             let city = try JSONDecoder().decode(T.self, from: jsonData)
             completion(city)
         }
-            
         catch let error {
-
             ProgressManager.shared.dismissWithError(error)
         }
     }

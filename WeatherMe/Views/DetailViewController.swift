@@ -7,10 +7,9 @@
 //
 
 import UIKit
-
 //TODO: - Is it good idea to initialize controller already with dataModel?
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
     //MARK: - Layout
     fileprivate let temperatureLabel: UILabel = {
         let label = UILabel()

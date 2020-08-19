@@ -209,12 +209,12 @@
 			isa = PBXGroup;
 			children = (
 				2648B49C24EABC1D00CDE1F0 /* City.swift */,
+				2644BC9D24EBFF54008048CF /* Coord.swift */,
 				2644BCA524EBFF72008048CF /* Clouds.swift */,
+				2644BC9F24EBFF5A008048CF /* Main.swift */,
 				2644BCA724EBFF77008048CF /* Sys.swift */,
 				2644BCA124EBFF63008048CF /* Wind.swift */,
 				2644BCA324EBFF69008048CF /* Weather.swift */,
-				2644BC9D24EBFF54008048CF /* Coord.swift */,
-				2644BC9F24EBFF5A008048CF /* Main.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -7,7 +7,6 @@
 //
 
 //TODO: - Should we remove navigation methods from controller class? ( View, according MVVM pattern )
-//TODO: - Create manager for progress hud
 
 import UIKit
 
@@ -54,9 +53,14 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        setupTitle()
         setupSearchBar()
         setupSearchButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupNavigationBar()
     }
     
     override func viewWillLayoutSubviews() {
@@ -75,6 +79,7 @@ final class SearchViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        navigationController?.setNavigationBarHidden(false, animated: true)
         searchBar.textField?.text = ""
     }
 
@@ -94,9 +99,8 @@ final class SearchViewController: UIViewController {
     }
     
     //MARK: - Fileprivate methods
-    fileprivate func setupTitle() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Search city"
+    fileprivate func setupNavigationBar() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     fileprivate func setupSearchButton() {
@@ -106,7 +110,22 @@ final class SearchViewController: UIViewController {
     
     fileprivate func setupSearchBar() {
         view.addSubview(searchBar)
+        
+        searchBar.delegate = self
+        searchBar.becomeFirstResponder()
     }
     
     
+}
+
+//MARK: - Keyboard handling methods
+extension SearchViewController: UISearchBarDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        didTappedSearchButton()
+    }
 }
