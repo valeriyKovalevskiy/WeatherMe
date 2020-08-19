@@ -20,7 +20,9 @@ class ParsingManager {
             completion(city)
         }
         catch let error {
-            ProgressManager.shared.dismissWithError(error)
+            
+            print(error.localizedDescription)
+            ProgressManager.shared.dismissWithError("Could't fetch data from networking")
         }
     }
     

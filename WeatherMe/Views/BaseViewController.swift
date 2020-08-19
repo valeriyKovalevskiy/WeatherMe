@@ -9,12 +9,13 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    
-    fileprivate let navigationBarFont = UIFont(name: "SFUIText-Light", size: 20)!
+    //MARK: - Constants
+    fileprivate let navigationBarFont = UIFont(name: "SFUIText-Light", size: 23)!
     fileprivate let textColor = UIColor(named: "textColor")!
     fileprivate let topGradientColor = UIColor(named: "topGradientColor")!
     fileprivate let bottomGradientColor = UIColor(named: "bottomGradientColor")!
 
+    //MARK: - Public methods
     func setupView() {
         let gradientView = UIView(frame: UIScreen.main.bounds)
         let gradientLayer: CAGradientLayer = CAGradientLayer()
@@ -38,6 +39,7 @@ class BaseViewController: UIViewController {
                                                             NSAttributedString.Key.font: navigationBarFont]
     }
 
+    //MARK: - Fileprivate methods
     @objc fileprivate func didTappedBackButton() {
         self.navigationController?.popViewController(animated: true)
     }

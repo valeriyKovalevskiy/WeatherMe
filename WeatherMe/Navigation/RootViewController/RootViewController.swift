@@ -9,6 +9,7 @@
 import UIKit
 
 //TODO: - Make animateFadeTransition custom transitions
+//TODO: - Create fonts sizes style ( 23 28 45 )
 
 class RootViewController: UIViewController {
     //MARK: - Properties

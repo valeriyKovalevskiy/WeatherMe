@@ -13,6 +13,7 @@ class ProgressManager {
     static let shared = ProgressManager()
     
     func showLoader(with status: String? = nil) {
+        SVProgressHUD.setFont(UIFont(name: "SFUIText-Light", size: 23)!)
         SVProgressHUD.show(withStatus: status)
     }
     
@@ -20,7 +21,8 @@ class ProgressManager {
         SVProgressHUD.dismiss(completion: completion)
     }
     
-    func dismissWithError(_ error: Error) {
-        SVProgressHUD.showError(withStatus: error.localizedDescription)
+    func dismissWithError(_ error: String) {
+        SVProgressHUD.setFont(UIFont(name: "SFUIText-Light", size: 23)!)
+        SVProgressHUD.showError(withStatus: error)
     }
 }

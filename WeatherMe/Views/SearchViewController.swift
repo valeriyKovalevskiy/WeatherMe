@@ -20,12 +20,9 @@ final class SearchViewController: BaseViewController {
         button.setTitleColor(mainColor, for: .normal)
         button.layer.cornerRadius = 12
         button.layer.borderWidth = 1
-        button.layer.borderColor = mainColor.cgColor
         button.layer.masksToBounds = true
-        
         button.setTitle("Search", for: .normal)
         button.titleLabel?.font = UIFont(name: "SFUIText-Light", size: 23)
-         
         
         return button
     }()
@@ -36,19 +33,17 @@ final class SearchViewController: BaseViewController {
         let image: UIImage = UIImage(systemName: "magnifyingglass")!
         let mainColor = UIColor(named: "textColor")!
         let backgrountColor = UIColor.clear
-
         searchBar.layer.masksToBounds = true
         searchBar.tintColor = mainColor
-        searchBar.layer.borderColor = mainColor.cgColor
         searchBar.layer.cornerRadius = 12
         searchBar.layer.borderWidth = 1
         searchBar.backgroundColor = backgrountColor
         searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-        searchTextField.placeholder = "City..."
+        searchTextField.placeholder = "City ..."
         searchTextField.backgroundColor = backgrountColor
         searchTextField.textColor = mainColor
         searchTextField.textAlignment = .left
-        searchTextField.font = UIFont(name: "SFUIText-LightItalic", size: 18)
+        searchTextField.font = UIFont(name: "SFUIText-Light", size: 23)
         DispatchQueue.main.async {
             searchBar.changePlaceholderColor(mainColor)
             searchBar.setupRightView(with: image, tintColor: mainColor)
@@ -84,12 +79,16 @@ final class SearchViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        searchButton.layer.borderColor = UIColor(named: "textColor")?.cgColor
+        searchBar.layer.borderColor = UIColor(named: "textColor")?.cgColor
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewWillLayoutSubviews() {
+
+        
         logoImageView.frame = CGRect(x: view.center.x - view.width * 0.25,
-                                     y: searchBar.top + view.width * 0.25,
+                                     y: view.center.y - view.width * 0.5 - 20,
                                      width: view.width * 0.5,
                                      height: view.width * 0.5)
         

@@ -15,7 +15,8 @@ class WeatherDataProvider: BaseDataProvider {
         ServerCommunication.getCurrentWeatherData(for: city) { [weak self] (response, error) in
             guard let error = error else { return ParsingManager.shared.parse(from: response, completion: completion) }
             
-            self?.progress.dismissWithError(error)
+            print(error.localizedDescription)
+            self?.progress.dismissWithError("City doesn't exist. Try another one")
         }
     }
 }
