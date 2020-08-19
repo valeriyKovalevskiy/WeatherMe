@@ -20,13 +20,13 @@ extension UISearchBar {
         return textField
     }
     
-    func setupRightView(with image: UIImage) {
+    func setupRightView(with image: UIImage, tintColor: UIColor) {
         let imageView: UIImageView = UIImageView.init(image: image)
         let searchTextField = self.searchTextField
-        imageView.tintColor = .brown
-        searchTextField.leftView = nil
+        imageView.tintColor = tintColor
         searchTextField.rightView = imageView
         searchTextField.rightViewMode = .unlessEditing
+        searchTextField.leftView = nil
     }
     
     func changePlaceholderColor(_ color: UIColor) {

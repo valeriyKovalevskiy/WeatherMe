@@ -9,8 +9,8 @@
 import Foundation
 
 struct Wind: Codable {
-    let windDegree: Double
-    let windSpeed: Double
+    let windDegree: Float
+    let windSpeed: Float
     
     fileprivate enum WindCodingKeys: String, CodingKey {
         case windDegree = "deg"
@@ -19,7 +19,7 @@ struct Wind: Codable {
     
     init(from decoder: Decoder) throws {
         let windContainer = try decoder.container(keyedBy: WindCodingKeys.self)
-        windDegree = try windContainer.decode(Double.self, forKey: .windDegree)
-        windSpeed = try windContainer.decode(Double.self, forKey: .windSpeed)
+        windDegree = try windContainer.decode(Float.self, forKey: .windDegree)
+        windSpeed = try windContainer.decode(Float.self, forKey: .windSpeed)
     }
 }

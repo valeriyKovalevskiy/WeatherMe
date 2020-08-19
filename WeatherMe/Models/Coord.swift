@@ -9,8 +9,8 @@
 import Foundation
 
 struct Coord: Codable {
-    let latitude: Double
-    let longitude: Double
+    let latitude: Float
+    let longitude: Float
     
     fileprivate enum CoordinatesCodingKeys: String, CodingKey {
         case latitude = "lat"
@@ -19,7 +19,7 @@ struct Coord: Codable {
     
     init(from decoder: Decoder) throws {
         let coordinatesContainer = try decoder.container(keyedBy: CoordinatesCodingKeys.self)
-        latitude = try coordinatesContainer.decode(Double.self, forKey: .latitude)
-        longitude = try coordinatesContainer.decode(Double.self, forKey: .longitude)
+        latitude = try coordinatesContainer.decode(Float.self, forKey: .latitude)
+        longitude = try coordinatesContainer.decode(Float.self, forKey: .longitude)
     }
 }

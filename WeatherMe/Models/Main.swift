@@ -9,12 +9,12 @@
 import Foundation
 
 struct Main: Codable {
-    let temperature: Double
-    let maxTemperature: Double
-    let minTemperature: Double
-    let feelsLikeTemperature: Double
-    let humidity: Double
-    let pressure: Double
+    let temperature: Float
+    let maxTemperature: Float
+    let minTemperature: Float
+    let feelsLikeTemperature: Float
+    let humidity: Float
+    let pressure: Float
     
     fileprivate enum MainCodingKeys: String, CodingKey {
         case temperature = "temp"
@@ -27,11 +27,11 @@ struct Main: Codable {
     
     init(from decoder: Decoder) throws {
         let mainContainer = try decoder.container(keyedBy: MainCodingKeys.self)
-        temperature = try mainContainer.decode(Double.self, forKey: .temperature)
-        maxTemperature = try mainContainer.decode(Double.self, forKey: .maxTemperature)
-        minTemperature = try mainContainer.decode(Double.self, forKey: .minTemperature)
-        feelsLikeTemperature = try mainContainer.decode(Double.self, forKey: .feelsLikeTemperature)
-        humidity = try mainContainer.decode(Double.self, forKey: .humidity)
-        pressure = try mainContainer.decode(Double.self, forKey: .pressure)
+        temperature = try mainContainer.decode(Float.self, forKey: .temperature)
+        maxTemperature = try mainContainer.decode(Float.self, forKey: .maxTemperature)
+        minTemperature = try mainContainer.decode(Float.self, forKey: .minTemperature)
+        feelsLikeTemperature = try mainContainer.decode(Float.self, forKey: .feelsLikeTemperature)
+        humidity = try mainContainer.decode(Float.self, forKey: .humidity)
+        pressure = try mainContainer.decode(Float.self, forKey: .pressure)
     }
 }

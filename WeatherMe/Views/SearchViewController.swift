@@ -10,16 +10,22 @@
 
 import UIKit
 
-final class SearchViewController: UIViewController {
+final class SearchViewController: BaseViewController {
     //MARK: - Layout
     fileprivate let searchButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemBackground
-        button.setTitleColor(.brown, for: .normal)
+        let mainColor = UIColor(named: "textColor")!
+        let backgrountColor = UIColor.clear
+        button.backgroundColor = backgrountColor
+        button.setTitleColor(mainColor, for: .normal)
         button.layer.cornerRadius = 12
+        button.layer.borderWidth = 1
+        button.layer.borderColor = mainColor.cgColor
         button.layer.masksToBounds = true
-        button.setTitle("Send request", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25, weight: .semibold)
+        
+        button.setTitle("Search", for: .normal)
+        button.titleLabel?.font = UIFont(name: "SFUIText-Light", size: 23)
+         
         
         return button
     }()
@@ -28,20 +34,37 @@ final class SearchViewController: UIViewController {
         let searchBar = UISearchBar()
         let searchTextField = searchBar.searchTextField
         let image: UIImage = UIImage(systemName: "magnifyingglass")!
+        let mainColor = UIColor(named: "textColor")!
+        let backgrountColor = UIColor.clear
+
         searchBar.layer.masksToBounds = true
-        searchBar.layer.borderWidth = 2.0
-        searchBar.layer.borderColor = UIColor.brown.cgColor
+        searchBar.tintColor = mainColor
+        searchBar.layer.borderColor = mainColor.cgColor
         searchBar.layer.cornerRadius = 12
-        searchTextField.placeholder = "Search"
-        searchTextField.textColor = UIColor.brown
+        searchBar.layer.borderWidth = 1
+        searchBar.backgroundColor = backgrountColor
+        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        searchTextField.placeholder = "City..."
+        searchTextField.backgroundColor = backgrountColor
+        searchTextField.textColor = mainColor
         searchTextField.textAlignment = .left
-        searchTextField.font = .systemFont(ofSize: 15, weight: .medium)
+        searchTextField.font = UIFont(name: "SFUIText-LightItalic", size: 18)
         DispatchQueue.main.async {
-            searchBar.changePlaceholderColor(.brown)
-            searchBar.setupRightView(with: image)
+            searchBar.changePlaceholderColor(mainColor)
+            searchBar.setupRightView(with: image, tintColor: mainColor)
         }
-        
+
         return searchBar
+    }()
+    
+    fileprivate let logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "logo")!
+        let mainColor = UIColor(named: "textColor")!
+        imageView.image = image
+        imageView.tintColor = mainColor
+
+        return imageView
     }()
     
     //MARK: - Constants
@@ -52,7 +75,8 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        setupView()
+        setupLogo()
         setupSearchBar()
         setupSearchButton()
     }
@@ -60,20 +84,24 @@ final class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupNavigationBar()
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewWillLayoutSubviews() {
+        logoImageView.frame = CGRect(x: view.center.x - view.width * 0.25,
+                                     y: searchBar.top + view.width * 0.25,
+                                     width: view.width * 0.5,
+                                     height: view.width * 0.5)
+        
         searchBar.frame = CGRect(x: view.center.x - view.width * 0.4,
-                                 y: view.top + 200,
+                                 y: view.center.y,
                                  width: view.width * 0.8,
                                  height: 44)
         
-        searchButton.frame = CGRect(x: view.center.x - searchBar.width / 2,
+        searchButton.frame = CGRect(x: view.center.x - searchBar.width / 4,
                                     y: searchBar.bottom + 20,
-                                    width: searchBar.width,
+                                    width: searchBar.width / 2,
                                     height: 44)
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -99,13 +127,16 @@ final class SearchViewController: UIViewController {
     }
     
     //MARK: - Fileprivate methods
-    fileprivate func setupNavigationBar() {
-        navigationController?.setNavigationBarHidden(true, animated: true)
-    }
+
+    
     
     fileprivate func setupSearchButton() {
         view.addSubview(searchButton)
         searchButton.addTarget(self, action: #selector(didTappedSearchButton), for: .touchUpInside)
+    }
+    
+    fileprivate func setupLogo() {
+        view.addSubview(logoImageView)
     }
     
     fileprivate func setupSearchBar() {

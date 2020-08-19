@@ -14,9 +14,9 @@ struct City: Codable {
     let mainParameters: Main
     let wind: Wind
     let clouds: Clouds
-    let timeOfDataCalculation: Double
+    let timeOfDataCalculation: Float
     let sys: Sys
-    let timezone: Double
+    let timezone: Float
     let id: Int
     let name: String
     
@@ -40,9 +40,9 @@ struct City: Codable {
         mainParameters = try values.decode(Main.self, forKey: .mainParameters)
         wind = try values.decode(Wind.self, forKey: .wind)
         clouds = try values.decode(Clouds.self, forKey: .clouds)
-        timeOfDataCalculation = try values.decode(Double.self, forKey: .timeOfDataCalculation)
+        timeOfDataCalculation = try values.decode(Float.self, forKey: .timeOfDataCalculation)
         sys = try values.decode(Sys.self, forKey: .sys)
-        timezone = try values.decode(Double.self, forKey: .timezone)
+        timezone = try values.decode(Float.self, forKey: .timezone)
         id = try values.decode(Int.self, forKey: .id)
         name = try values.decode(String.self, forKey: .name)
     }

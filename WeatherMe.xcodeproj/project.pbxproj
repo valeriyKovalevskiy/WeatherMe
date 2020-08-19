@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2643544824ED21B00070D997 /* SFUIText-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643543C24ED21AF0070D997 /* SFUIText-SemiboldItalic.ttf */; };
+		2643544924ED21B00070D997 /* SFUIText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643543D24ED21AF0070D997 /* SFUIText-Italic.ttf */; };
+		2643544A24ED21B00070D997 /* SFUIText-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643543E24ED21AF0070D997 /* SFUIText-HeavyItalic.ttf */; };
+		2643544B24ED21B00070D997 /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643543F24ED21AF0070D997 /* SFUIText-Bold.ttf */; };
+		2643544C24ED21B00070D997 /* SFUIText-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643544024ED21AF0070D997 /* SFUIText-Heavy.ttf */; };
+		2643544D24ED21B00070D997 /* SFUIText-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643544124ED21AF0070D997 /* SFUIText-LightItalic.ttf */; };
+		2643544E24ED21B00070D997 /* SFUIText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643544224ED21AF0070D997 /* SFUIText-BoldItalic.ttf */; };
+		2643544F24ED21B00070D997 /* SFUIText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643544324ED21AF0070D997 /* SFUIText-Medium.ttf */; };
+		2643545024ED21B00070D997 /* SFUIText-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643544424ED21AF0070D997 /* SFUIText-MediumItalic.ttf */; };
+		2643545124ED21B00070D997 /* SFUIText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643544524ED21AF0070D997 /* SFUIText-Semibold.ttf */; };
+		2643545224ED21B00070D997 /* SFUIText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643544624ED21AF0070D997 /* SFUIText-Light.ttf */; };
+		2643545324ED21B00070D997 /* SFUIText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2643544724ED21AF0070D997 /* SFUIText-Regular.ttf */; };
+		2643545724ED34B30070D997 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643545624ED34B30070D997 /* BaseViewController.swift */; };
+		2643545924ED549A0070D997 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2643545824ED549A0070D997 /* Colors.xcassets */; };
+		2643545B24ED58220070D997 /* Float+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643545A24ED58220070D997 /* Float+Ext.swift */; };
 		2644BC9924EB9FFD008048CF /* ParsingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644BC9824EB9FFD008048CF /* ParsingManager.swift */; };
 		2644BC9C24EBBF84008048CF /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644BC9B24EBBF84008048CF /* ProgressManager.swift */; };
 		2644BC9E24EBFF54008048CF /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644BC9D24EBFF54008048CF /* Coord.swift */; };
@@ -40,6 +55,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2643543C24ED21AF0070D997 /* SFUIText-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		2643543D24ED21AF0070D997 /* SFUIText-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Italic.ttf"; sourceTree = "<group>"; };
+		2643543E24ED21AF0070D997 /* SFUIText-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		2643543F24ED21AF0070D997 /* SFUIText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Bold.ttf"; sourceTree = "<group>"; };
+		2643544024ED21AF0070D997 /* SFUIText-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Heavy.ttf"; sourceTree = "<group>"; };
+		2643544124ED21AF0070D997 /* SFUIText-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-LightItalic.ttf"; sourceTree = "<group>"; };
+		2643544224ED21AF0070D997 /* SFUIText-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2643544324ED21AF0070D997 /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.ttf"; sourceTree = "<group>"; };
+		2643544424ED21AF0070D997 /* SFUIText-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-MediumItalic.ttf"; sourceTree = "<group>"; };
+		2643544524ED21AF0070D997 /* SFUIText-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Semibold.ttf"; sourceTree = "<group>"; };
+		2643544624ED21AF0070D997 /* SFUIText-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Light.ttf"; sourceTree = "<group>"; };
+		2643544724ED21AF0070D997 /* SFUIText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Regular.ttf"; sourceTree = "<group>"; };
+		2643545624ED34B30070D997 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2643545824ED549A0070D997 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		2643545A24ED58220070D997 /* Float+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Ext.swift"; sourceTree = "<group>"; };
 		2644BC9824EB9FFD008048CF /* ParsingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingManager.swift; sourceTree = "<group>"; };
 		2644BC9B24EBBF84008048CF /* ProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
 		2644BC9D24EBFF54008048CF /* Coord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
@@ -88,6 +118,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2643543B24ED21930070D997 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2643543F24ED21AF0070D997 /* SFUIText-Bold.ttf */,
+				2643544224ED21AF0070D997 /* SFUIText-BoldItalic.ttf */,
+				2643544024ED21AF0070D997 /* SFUIText-Heavy.ttf */,
+				2643543E24ED21AF0070D997 /* SFUIText-HeavyItalic.ttf */,
+				2643543D24ED21AF0070D997 /* SFUIText-Italic.ttf */,
+				2643544624ED21AF0070D997 /* SFUIText-Light.ttf */,
+				2643544124ED21AF0070D997 /* SFUIText-LightItalic.ttf */,
+				2643544324ED21AF0070D997 /* SFUIText-Medium.ttf */,
+				2643544424ED21AF0070D997 /* SFUIText-MediumItalic.ttf */,
+				2643544724ED21AF0070D997 /* SFUIText-Regular.ttf */,
+				2643544524ED21AF0070D997 /* SFUIText-Semibold.ttf */,
+				2643543C24ED21AF0070D997 /* SFUIText-SemiboldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		2644BC9A24EBBD4A008048CF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +192,10 @@
 			children = (
 				2648B45A24EA46D300CDE1F0 /* AppDelegate.swift */,
 				2648B46624EA46D300CDE1F0 /* Assets.xcassets */,
+				2643545824ED549A0070D997 /* Colors.xcassets */,
 				2648B46B24EA46D300CDE1F0 /* Info.plist */,
 				2648B48224EA8B9400CDE1F0 /* CoreData */,
+				2643543B24ED21930070D997 /* Fonts */,
 				2648B48124EA8B8700CDE1F0 /* Extensions */,
 				2644BC9A24EBBD4A008048CF /* Managers */,
 			);
@@ -156,6 +207,7 @@
 			children = (
 				2648B47D24EA5F4100CDE1F0 /* UIView+Ext.swift */,
 				2648B47F24EA6F1900CDE1F0 /* SeachBar+Ext.swift */,
+				2643545A24ED58220070D997 /* Float+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,6 +287,7 @@
 				2648B47B24EA5E6A00CDE1F0 /* DetailViewController.swift */,
 				2648B47624EA544C00CDE1F0 /* SecondViewController.swift */,
 				2648B47824EA545800CDE1F0 /* ThirdViewController.swift */,
+				2643545624ED34B30070D997 /* BaseViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,8 +377,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2643545924ED549A0070D997 /* Colors.xcassets in Resources */,
+				2643544824ED21B00070D997 /* SFUIText-SemiboldItalic.ttf in Resources */,
+				2643545124ED21B00070D997 /* SFUIText-Semibold.ttf in Resources */,
 				2648B46A24EA46D300CDE1F0 /* LaunchScreen.storyboard in Resources */,
+				2643544A24ED21B00070D997 /* SFUIText-HeavyItalic.ttf in Resources */,
+				2643544D24ED21B00070D997 /* SFUIText-LightItalic.ttf in Resources */,
+				2643545224ED21B00070D997 /* SFUIText-Light.ttf in Resources */,
+				2643544C24ED21B00070D997 /* SFUIText-Heavy.ttf in Resources */,
+				2643544924ED21B00070D997 /* SFUIText-Italic.ttf in Resources */,
 				2648B46724EA46D300CDE1F0 /* Assets.xcassets in Resources */,
+				2643544E24ED21B00070D997 /* SFUIText-BoldItalic.ttf in Resources */,
+				2643545024ED21B00070D997 /* SFUIText-MediumItalic.ttf in Resources */,
+				2643545324ED21B00070D997 /* SFUIText-Regular.ttf in Resources */,
+				2643544B24ED21B00070D997 /* SFUIText-Bold.ttf in Resources */,
+				2643544F24ED21B00070D997 /* SFUIText-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +449,7 @@
 				2644BC9C24EBBF84008048CF /* ProgressManager.swift in Sources */,
 				2644BCA624EBFF72008048CF /* Clouds.swift in Sources */,
 				2648B47424EA4CCA00CDE1F0 /* RootViewController.swift in Sources */,
+				2643545724ED34B30070D997 /* BaseViewController.swift in Sources */,
 				2648B49D24EABC1D00CDE1F0 /* City.swift in Sources */,
 				2644BC9924EB9FFD008048CF /* ParsingManager.swift in Sources */,
 				2648B46524EA46D300CDE1F0 /* WeatherMe.xcdatamodeld in Sources */,
@@ -400,6 +467,7 @@
 				2648B47224EA4BDF00CDE1F0 /* SplashViewController.swift in Sources */,
 				2648B48E24EAA83900CDE1F0 /* ServerCommunication.swift in Sources */,
 				2644BC9E24EBFF54008048CF /* Coord.swift in Sources */,
+				2643545B24ED58220070D997 /* Float+Ext.swift in Sources */,
 				2648B48624EA8D8000CDE1F0 /* AlamofireManager.swift in Sources */,
 				2648B48024EA6F1900CDE1F0 /* SeachBar+Ext.swift in Sources */,
 				2648B48C24EAA49200CDE1F0 /* WeatherRequests.swift in Sources */,

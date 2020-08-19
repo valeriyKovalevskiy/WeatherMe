@@ -10,8 +10,8 @@ import Foundation
 
 struct Sys: Codable {
     let countryCode: String
-    let sunsetTime: Double
-    let sunriseTime: Double
+    let sunsetTime: Float
+    let sunriseTime: Float
     
     fileprivate enum SysCodingKeys: String, CodingKey {
         case countryCode = "country"
@@ -22,7 +22,7 @@ struct Sys: Codable {
     init(from decoder: Decoder) throws {
         let sysContainer = try decoder.container(keyedBy: SysCodingKeys.self)
         countryCode = try sysContainer.decode(String.self, forKey: .countryCode)
-        sunsetTime = try sysContainer.decode(Double.self, forKey: .sunsetTime)
-        sunriseTime = try sysContainer.decode(Double.self, forKey: .sunriseTime)
+        sunsetTime = try sysContainer.decode(Float.self, forKey: .sunsetTime)
+        sunriseTime = try sysContainer.decode(Float.self, forKey: .sunriseTime)
     }
 }
