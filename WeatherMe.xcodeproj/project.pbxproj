@@ -51,6 +51,7 @@
 		2648B49524EAB09500CDE1F0 /* BaseDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648B49424EAB09500CDE1F0 /* BaseDataProvider.swift */; };
 		2648B49D24EABC1D00CDE1F0 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648B49C24EABC1D00CDE1F0 /* City.swift */; };
 		2648B49F24EABECA00CDE1F0 /* SearchViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648B49E24EABECA00CDE1F0 /* SearchViewControllerViewModel.swift */; };
+		265AD5B424F022FC00BFFAD0 /* UIWindow+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265AD5B324F022FC00BFFAD0 /* UIWindow+Ext.swift */; };
 		30E2C1FA781B7E6BC4873CC3 /* Pods_WeatherMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F598D6B501DE76A179E7CD /* Pods_WeatherMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		2648B49424EAB09500CDE1F0 /* BaseDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataProvider.swift; sourceTree = "<group>"; };
 		2648B49C24EABC1D00CDE1F0 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		2648B49E24EABECA00CDE1F0 /* SearchViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerViewModel.swift; sourceTree = "<group>"; };
+		265AD5B324F022FC00BFFAD0 /* UIWindow+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Ext.swift"; sourceTree = "<group>"; };
 		2DAE8B488F153E36C3A5FC6A /* Pods-WeatherMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMe.debug.xcconfig"; path = "Target Support Files/Pods-WeatherMe/Pods-WeatherMe.debug.xcconfig"; sourceTree = "<group>"; };
 		C3F598D6B501DE76A179E7CD /* Pods_WeatherMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C881D3DE3F9A495C17C8A7C4 /* Pods-WeatherMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMe.release.xcconfig"; path = "Target Support Files/Pods-WeatherMe/Pods-WeatherMe.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				2648B47D24EA5F4100CDE1F0 /* UIView+Ext.swift */,
 				2648B47F24EA6F1900CDE1F0 /* SeachBar+Ext.swift */,
 				2643545A24ED58220070D997 /* Float+Ext.swift */,
+				265AD5B324F022FC00BFFAD0 /* UIWindow+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2648B47724EA544C00CDE1F0 /* SecondViewController.swift in Sources */,
+				265AD5B424F022FC00BFFAD0 /* UIWindow+Ext.swift in Sources */,
 				2648B49F24EABECA00CDE1F0 /* SearchViewControllerViewModel.swift in Sources */,
 				2644BC9C24EBBF84008048CF /* ProgressManager.swift in Sources */,
 				2644BCA624EBFF72008048CF /* Clouds.swift in Sources */,
